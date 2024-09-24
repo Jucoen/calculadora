@@ -7,22 +7,21 @@
 </head>
 <body>
     <h1>Calculadora</h1>
-    <form id="calculadora" action="resultado.php" method="POST">
-        <label for="numero1">Número 1:</label>
-        <input type="number" id="numero1" name="numero1" required>
+    <form action="calculadora.php" method="post">
+        <p>Número 1:</p>
+        <input type="number" name="numero1" required>
         <br>
-
-        <label for="numero2">Número 2:</label>
-        <input type="number" id="numero2" name="numero2" required>
-        <br>
-        <br>
-        <button type="submit" name="operacion" value="sumar">Sumar</button>
-        <button type="submit" name="operacion" value="restar">Restar</button>
-        <button type="submit" name="operacion" value="multiplicar">Multiplicar</button>
-        <button type="submit" name="operacion" value="dividir">Dividir</button>
-        <br>
-
-        <p>Resultado: <span id="resultado"><?php if (isset($_GET['resultado'])) echo $_GET['resultado']; ?></span></p>
+        <p>Número 2:</p>
+        <input type="number" name="numero2" required>
+        <br><br>
+        <button type="submit" name="operacion" value="suma">Sumar</button>
+        <button type="submit" name="operacion" value="resta">Restar</button>
+        <button type="submit" name="operacion" value="multiplicacion">Multiplicar</button>
+        <button type="submit" name="operacion" value="division">Dividir</button>
     </form>
+
+    <?php if (isset($resultado)): ?>
+        <h2>Resultado: <?php echo $resultado; ?></h2>
+    <?php endif; ?>
 </body>
 </html>
